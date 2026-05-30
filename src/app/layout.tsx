@@ -19,6 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nox-website-three.vercel.app"),
   title: "Nox - Motion Design for Tech Teams",
   description:
     "Clarity-first motion graphics for complex products. Launch videos, product demos, and explainers built around your launches and campaigns. 7-day delivery.",
