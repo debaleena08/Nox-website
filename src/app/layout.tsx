@@ -19,10 +19,6 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ??
-    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000")
-  ),
   title: "Nox - Motion Design for Tech Teams",
   description:
     "Clarity-first motion graphics for complex products. Launch videos, product demos, and explainers built around your launches and campaigns. 7-day delivery.",
@@ -35,10 +31,6 @@ export const metadata: Metadata = {
     description:
       "Clarity-first motion graphics for complex products. Launch videos, product demos, and explainers built around your launches and campaigns. 7-day delivery.",
     type: "website",
-    images: [{ url: "/seo/ogimage.png", width: 1200, height: 630 }],
-  },
-  twitter: {
-    card: "summary_large_image",
   },
 };
 
