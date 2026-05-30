@@ -35,7 +35,7 @@ function PersonCard({ card, index }: { card: (typeof CARDS)[0]; index: number })
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    let fallbackTimer: ReturnType<typeof setTimeout> | undefined;
+    let fallbackTimer: ReturnType<typeof setTimeout> | undefined = undefined;
 
     // Synchronously hide before animation so there's no flash — only when motion is allowed.
     // Without JS, elements remain visible (opacity not set in JSX).
