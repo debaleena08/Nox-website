@@ -19,6 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.noxstudios.co"),
   title: "Nox - Motion Design for Tech Teams",
   description:
     "Clarity-first motion graphics for complex products. Launch videos, product demos, and explainers built around your launches and campaigns. 7-day delivery.",
@@ -31,6 +32,14 @@ export const metadata: Metadata = {
     description:
       "Clarity-first motion graphics for complex products. Launch videos, product demos, and explainers built around your launches and campaigns. 7-day delivery.",
     type: "website",
+    url: "https://www.noxstudios.co",
+    images: [{ url: "/seo/ogimage.png", width: 1200, height: 630, alt: "Nox — Motion design partner for tech teams" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nox - Motion Design for Tech Teams",
+    description: "Clarity-first motion graphics for complex products. Launch videos, product demos, and explainers built around your launches and campaigns. 7-day delivery.",
+    images: ["/seo/ogimage.png"],
   },
 };
 
