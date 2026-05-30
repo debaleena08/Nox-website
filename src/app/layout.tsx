@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description:
       "Clarity-first motion graphics for complex products. Launch videos, product demos, and explainers built around your launches and campaigns. 7-day delivery.",
     type: "website",
-    images: [{ url: "/seo/691f33c104d98fec1cc9c70d_ogimage_A.png", width: 1200, height: 630 }],
+    images: [{ url: "/seo/ogimage.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
