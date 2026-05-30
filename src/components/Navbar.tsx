@@ -42,7 +42,7 @@ export function Navbar() {
           href="https://cal.com/aritrya-sanyal/introductory-call.-30-mins"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover-blink inline-flex items-center gap-2 bg-nox-gold hover:bg-nox-white transition-colors duration-200 px-5 py-3 font-mono text-[0.75rem] tracking-[0.04em] leading-[1.2] text-nox-black whitespace-nowrap"
+          className="hover-blink inline-flex min-h-[44px] items-center gap-2 bg-nox-gold hover:bg-nox-white transition-colors duration-200 px-5 py-3 font-mono text-[0.75rem] tracking-[0.04em] leading-[1.2] text-nox-black whitespace-nowrap"
         >
           <span aria-hidden className="colon-blink flex h-[0.875rem] w-2 items-center justify-center">
             <ColonIcon fill="currentColor" />

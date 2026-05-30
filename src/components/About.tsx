@@ -35,7 +35,19 @@ function PersonCard({ card, index }: { card: (typeof CARDS)[0]; index: number })
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    let fallbackTimer: ReturnType<typeof setTimeout>;
+    let fallbackTimer: ReturnType<typeof setTimeout> | undefined;
+
+    // Synchronously hide before animation so there's no flash — only when motion is allowed.
+    // Without JS, elements remain visible (opacity not set in JSX).
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      el.style.opacity = "0";
+      const photoEl = el.querySelector<HTMLElement>("[data-photo]");
+      const headerEl = el.querySelector<HTMLElement>("[data-header-row]");
+      const listEls = Array.from(el.querySelectorAll<HTMLElement>("[data-list-item]"));
+      if (photoEl) photoEl.style.opacity = "0";
+      if (headerEl) headerEl.style.opacity = "0";
+      listEls.forEach((li) => { li.style.opacity = "0"; });
+    }
 
     import("animejs").then((mod) => {
       const photo     = el.querySelector<HTMLElement>("[data-photo]");
@@ -43,21 +55,17 @@ function PersonCard({ card, index }: { card: (typeof CARDS)[0]; index: number })
       const listItems = Array.from(el.querySelectorAll<HTMLElement>("[data-list-item]"));
 
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        if (photo)     photo.style.opacity = "1";
-        if (headerRow) headerRow.style.opacity = "1";
-        listItems.forEach((li) => { li.style.opacity = "1"; });
         return;
       }
 
       const accent    = el.querySelector<HTMLElement>("[data-accent]");
       const divider   = el.querySelector<HTMLElement>("[data-divider]");
 
-      el.style.opacity = "0";
+      // el, photo, headerRow, listItems already hidden above — set transforms only
       if (accent)    { accent.style.opacity = "0"; accent.style.transformOrigin = "left"; }
-      if (photo)     { photo.style.opacity = "0"; }
-      if (headerRow) { headerRow.style.opacity = "0"; headerRow.style.transform = "translateY(6px)"; }
+      if (headerRow) { headerRow.style.transform = "translateY(6px)"; }
       if (divider)   { divider.style.opacity = "0"; divider.style.transformOrigin = "left"; }
-      listItems.forEach((li) => { li.style.opacity = "0"; li.style.transform = "translateX(-6px)"; });
+      listItems.forEach((li) => { li.style.transform = "translateX(-6px)"; });
 
       const base = index * 120;
 
@@ -71,7 +79,7 @@ function PersonCard({ card, index }: { card: (typeof CARDS)[0]; index: number })
       };
 
       // Fallback: if observer never fires (card not scrolled into view enough), reveal after delay
-      const fallbackTimer = setTimeout(revealAll, 3000 + base);
+      fallbackTimer = setTimeout(revealAll, 3000 + base);
 
       observerRef.current = new IntersectionObserver(
         (entries) => {
@@ -139,7 +147,6 @@ function PersonCard({ card, index }: { card: (typeof CARDS)[0]; index: number })
         <div
           data-photo
           className="absolute inset-0 overflow-hidden"
-          style={{ opacity: 0 }}
         >
           <Image
             src={card.imageSrc}
@@ -159,7 +166,6 @@ function PersonCard({ card, index }: { card: (typeof CARDS)[0]; index: number })
       <div
         data-header-row
         className="flex w-full flex-col gap-8 md:gap-[3.35rem]"
-        style={{ opacity: 0 }}
       >
         {/* Details — centered 402px column */}
         <div
@@ -182,7 +188,7 @@ function PersonCard({ card, index }: { card: (typeof CARDS)[0]; index: number })
             target={card.ctaHref.startsWith("http") ? "_blank" : undefined}
             rel={card.ctaHref.startsWith("http") ? "noopener noreferrer" : undefined}
             className="hover-blink flex items-center justify-end bg-nox-surface hover:bg-nox-black transition-colors duration-200"
-            style={{ gap: "1.117rem", padding: "0.875rem 1.117rem 0.875rem 2.23rem", opacity: 0 }}
+            style={{ gap: "1.117rem", padding: "0.875rem 1.117rem 0.875rem 2.23rem" }}
           >
             <span aria-hidden className="colon-blink flex h-[0.875rem] w-2 items-center justify-center flex-none text-nox-gold">
               <ColonIcon fill="currentColor" />
@@ -196,7 +202,7 @@ function PersonCard({ card, index }: { card: (typeof CARDS)[0]; index: number })
             data-list-item
             href={`mailto:${card.email}`}
             className="hover-blink flex items-center justify-end bg-nox-surface hover:bg-nox-black transition-colors duration-200"
-            style={{ gap: "1.117rem", padding: "0.875rem 1.117rem 0.875rem 2.23rem", opacity: 0 }}
+            style={{ gap: "1.117rem", padding: "0.875rem 1.117rem 0.875rem 2.23rem" }}
           >
             <span aria-hidden className="colon-blink flex h-[0.875rem] w-2 items-center justify-center flex-none text-nox-gold">
               <ColonIcon fill="currentColor" />

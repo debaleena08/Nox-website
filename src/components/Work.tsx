@@ -9,6 +9,7 @@ type WorkItem = {
   paragraph: string;
   outcome: string;
   videoSrc: string;
+  captionSrc: string;
   projectUrl?: string;
   reversed?: boolean;
 };
@@ -21,6 +22,7 @@ const WORK_ITEMS: WorkItem[] = [
       "Invisible AI companion that organizes your workflows, retrieves what you need, and surfaces insights before you think to ask.",
     outcome: "2.8K+ Stars on GitHub",
     videoSrc: "/videos/amurex.mp4",
+    captionSrc: "/videos/amurex.vtt",
     projectUrl: "https://www.linkedin.com/posts/sanskar123_we-built-amurexai-an-invisible-ai-companion-activity-7319975003590955008-kW25",
   },
   {
@@ -30,6 +32,7 @@ const WORK_ITEMS: WorkItem[] = [
       "Multi-document intelligence that gives answers to your risk teams, agents, and pipelines.",
     outcome: "Databricks Technology Partner",
     videoSrc: "/videos/parsewise.mp4",
+    captionSrc: "/videos/parsewise.vtt",
     projectUrl: "https://www.linkedin.com/posts/y-combinator_parsewise-turns-complex-documents-into-validated-activity-7328554711484112896-5Clm",
     reversed: true,
   },
@@ -40,6 +43,7 @@ const WORK_ITEMS: WorkItem[] = [
       "AI that operates your browser so your operations team can stop doing what machines should.",
     outcome: "25+ Enterprise Customers",
     videoSrc: "/videos/asteroid.mp4",
+    captionSrc: "/videos/asteroid.vtt",
     projectUrl: "https://www.linkedin.com/posts/y-combinator_asteroid-yc-w25-lets-startups-smes-and-activity-7300187947671109634--n2P",
   },
 ];
@@ -78,7 +82,7 @@ function ViewProjectLink({ href }: { href?: string }) {
       target={href ? "_blank" : undefined}
       rel={href ? "noopener noreferrer" : undefined}
       onMouseEnter={handleMouseEnter}
-      className="inline-flex items-center gap-2 font-mono-display text-[0.75rem] tracking-[0.04em] text-nox-gold"
+      className="inline-flex min-h-[44px] items-center gap-2 font-mono-display text-[0.75rem] tracking-[0.04em] text-nox-gold"
     >
       View project
       <span aria-hidden data-arrow className="inline-block">→</span>
@@ -299,6 +303,7 @@ function WorkCard({ item }: { item: WorkItem }) {
           className={`absolute inset-0 h-full w-full object-cover brightness-[0.8] ${mobileControlsOn ? "pointer-events-auto" : "pointer-events-none"}`}
         >
           <source src={item.videoSrc} type="video/mp4" />
+          <track kind="captions" src={item.captionSrc} srcLang="en" label="English" default />
         </video>
         {!mobileControlsOn && (
           <button
@@ -333,6 +338,7 @@ function WorkCard({ item }: { item: WorkItem }) {
             className="absolute inset-0 h-full w-full object-cover transition-[filter] duration-500 brightness-[0.8] group-hover:brightness-[0.55]"
           >
             <source src={item.videoSrc} type="video/mp4" />
+            <track kind="captions" src={item.captionSrc} srcLang="en" label="English" default />
           </video>
         </div>
 

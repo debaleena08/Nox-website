@@ -297,7 +297,7 @@ export function Interaction() {
             ref={mobileCloseRef}
             type="button"
             onClick={() => setMobileVideoOpen(false)}
-            className="absolute top-5 right-6 font-mono text-[0.75rem] tracking-[0.04em] leading-[1.2] text-nox-white"
+            className="absolute top-5 right-6 inline-flex min-h-[44px] items-center font-mono text-[0.75rem] tracking-[0.04em] leading-[1.2] text-nox-white"
           >
             [ Close the video (ESC) ]
           </button>
