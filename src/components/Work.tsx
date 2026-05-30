@@ -303,7 +303,6 @@ function WorkCard({ item }: { item: WorkItem }) {
           className={`absolute inset-0 h-full w-full object-cover brightness-[0.8] ${mobileControlsOn ? "pointer-events-auto" : "pointer-events-none"}`}
         >
           <source src={item.videoSrc} type="video/mp4" />
-          <track kind="captions" src={item.captionSrc} srcLang="en" label="English" default />
         </video>
         {!mobileControlsOn && (
           <button
@@ -338,7 +337,6 @@ function WorkCard({ item }: { item: WorkItem }) {
             className="absolute inset-0 h-full w-full object-cover transition-[filter] duration-500 brightness-[0.8] group-hover:brightness-[0.55]"
           >
             <source src={item.videoSrc} type="video/mp4" />
-            <track kind="captions" src={item.captionSrc} srcLang="en" label="English" default />
           </video>
         </div>
 
