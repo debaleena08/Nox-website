@@ -5,8 +5,8 @@ import Link from "next/link";
 import { ColonIcon } from "@/components/ui/ColonIcon";
 
 const PACKAGES = [
-  { name: "Standard",   featured: false, price: "$900"   },
-  { name: "Sprint",     featured: true,  price: "$1800"  },
+  { name: "Standard",   featured: false, price: "$1300"  },
+  { name: "Sprint",     featured: true,  price: "$2000"  },
   { name: "Bundle",     featured: false, price: null     },
 ];
 
