@@ -17,7 +17,7 @@ type WorkItem = {
 const WORK_ITEMS: WorkItem[] = [
   {
     step: "01",
-    heading: "Amurex",
+    heading: "Amurex [Entrepreneurs First]",
     paragraph:
       "Invisible AI companion that organizes your workflows, retrieves what you need, and surfaces insights before you think to ask.",
     outcome: "2.8K+ Stars on GitHub",
