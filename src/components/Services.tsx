@@ -5,18 +5,15 @@ import { useRef, useEffect } from "react";
 const SERVICES = [
   {
     index: "01",
-    name: "Product Explainers",
-    descriptor: "Conceptual. Why it matters.",
+    name: "3D Product Films & Animations",
   },
   {
     index: "02",
-    name: "Product Demos",
-    descriptor: "Walkthroughs. What it does.",
+    name: "Product Explainers/Demos",
   },
   {
     index: "03",
     name: "Launch Videos",
-    descriptor: "Demo Day. Product Hunt. Fundraise.",
   },
 ];
 
@@ -95,9 +92,6 @@ export function Services() {
               </span>
               <span className="flex-1 font-mono text-[1.25rem] sm:text-[1.5rem] md:text-[1.75rem] leading-[1.2] tracking-[-0.03em] text-nox-white uppercase">
                 {service.name}
-              </span>
-              <span className="hidden md:block font-mono text-[0.75rem] tracking-[0.08em] text-nox-white/70 flex-none">
-                {service.descriptor}
               </span>
             </div>
           </div>
