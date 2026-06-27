@@ -37,7 +37,7 @@ export function Hero() {
 
           <div className="flex flex-none flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
             <Link
-              href="https://tally.so/r/9qM95p"
+              href="https://cal.com/aritrya-sanyal/introductory-call.-30-mins"
               target="_blank"
               rel="noopener noreferrer"
               className="group hover-blink inline-flex flex-none items-center gap-4 bg-nox-white hover:bg-nox-gray transition-colors duration-200 px-6 py-3"
@@ -46,19 +46,19 @@ export function Hero() {
                 <ColonIcon fill="currentColor" />
               </span>
               <span className="font-mono text-[0.75rem] font-normal tracking-[0.04em] leading-[1.2] text-nox-black group-hover:text-nox-white transition-colors duration-200">
-                Get a Concept
+                Book a Call Now
               </span>
             </Link>
 
             <Link
-              href="/#packages"
+              href="/#work"
               className="group hover-blink inline-flex flex-none items-center gap-4 border border-nox-white/30 hover:border-nox-white/60 hover:bg-nox-white/[0.06] transition-colors duration-200 px-6 py-3"
             >
               <span aria-hidden className="colon-blink flex h-[0.875rem] w-2 items-center justify-center text-nox-white/40 group-hover:text-nox-gold transition-colors duration-200">
                 <ColonIcon fill="currentColor" />
               </span>
               <span className="font-mono text-[0.75rem] font-normal tracking-[0.04em] leading-[1.2] text-nox-white/70 group-hover:text-nox-white transition-colors duration-200">
-                See Plans
+                See Work
               </span>
             </Link>
           </div>
