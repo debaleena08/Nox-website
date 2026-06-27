@@ -8,7 +8,7 @@ type FAQItem = { q: string; a: string };
 const FAQ_ITEMS: FAQItem[] = [
   {
     q: "How long does it take?",
-    a: "Sprint delivers in 7 business days. Standard is 2–3 weeks. The clock starts the day your deposit clears, and all brand assets are in.",
+    a: "Depends on the scope.\n\n2D explainers and launch videos: 1–3 weeks. If you're on a tight deadline, we can move in a week.\n3D product films: 3–5 weeks, depending on complexity and asset prep.\n\nThe clock starts the day your deposit clears and all brand materials are in.",
   },
   {
     q: "What do you need from me?",
