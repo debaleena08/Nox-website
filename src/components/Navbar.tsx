@@ -9,6 +9,7 @@ import { NoxLogo } from "@/components/ui/NoxLogo";
 const NAV_LINKS = [
   { href: "/#work",     label: "Work"     },
   { href: "/#process",  label: "Process"  },
+  { href: "/#packages", label: "Packages" },
   { href: "/#faq",      label: "FAQs"     },
   { href: "/#about",    label: "About"    },
 ];

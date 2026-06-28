@@ -4,7 +4,7 @@ import { Interaction } from "@/components/Interaction";
 import { Services } from "@/components/Services";
 import { Work } from "@/components/Work";
 import { Process } from "@/components/Process";
-// import { Packages } from "@/components/Packages";
+import { Packages } from "@/components/Packages";
 import { FAQ } from "@/components/FAQ";
 import { About } from "@/components/About";
 
@@ -20,7 +20,7 @@ export default function Home() {
         <Services />
         <Work />
         <Process />
-        {/* <Packages /> */}
+        <Packages />
         <FAQ />
         <About />
       </main>
